@@ -11,7 +11,9 @@ import java.io.IOException;
 public class ItemShowServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        // store id of item to be shown
+        // get that record object from DB using model logic
+        request.getRequestDispatcher("/WEB-INF/item/show.jsp").forward(request, response);
     }
 
 }

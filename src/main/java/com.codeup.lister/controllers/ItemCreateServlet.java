@@ -10,9 +10,12 @@ import java.io.IOException;
 @WebServlet(name = "ItemCreateServlet", urlPatterns = "/items/create")
 public class ItemCreateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        // validate inputs
+        // if valid, create the new item object and add to DB and redirect to index page
+        // if invalid redirect back to the create form
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("/WEB-INF/item/create.jsp").forward(request, response);
     }
 }
+

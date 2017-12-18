@@ -9,8 +9,10 @@ import java.io.IOException;
 
 @WebServlet(name = "ItemDeleteServlet", urlPatterns = "/items/delete")
 public class ItemDeleteServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // logic to delete the item from the DB
+        request.getRequestDispatcher("/WEB-INF/item/index.jsp").forward(request, response);
     }
 
 }
