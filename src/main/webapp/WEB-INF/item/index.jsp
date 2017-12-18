@@ -22,7 +22,7 @@
 
     <ul>
         <c:forEach var="item" items="${items}">
-            <li>${item}</li>
+            <li>${item.name}</li>
         </c:forEach>
     </ul>
 
