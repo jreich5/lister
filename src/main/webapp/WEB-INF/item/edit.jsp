@@ -9,7 +9,7 @@
     <title>Lister: Edit Item</title>
 
     <%@ include file="/WEB-INF/partials/head.html" %>
-    
+
     <style>
 
     </style>
