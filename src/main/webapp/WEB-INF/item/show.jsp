@@ -1,16 +1,31 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: justinreich
-  Date: 12/18/17
-  Time: 11:11 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!doctype html>
+<html class="no-js" lang="">
 <head>
-    <title>Title</title>
+    <%@ include file="/WEB-INF/partials/head.html" %>
+
+    <title>Lister: Item</title>
+
+    <style>
+
+    </style>
+
 </head>
 <body>
 
+<main class="container">
+
+    <h1>List Item</h1>
+
+    <h3>${item}</h3>
+
+</main>
+
+<%@ include file="/WEB-INF/partials/scripts.html" %>
+
 </body>
 </html>
+
