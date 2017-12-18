@@ -21,7 +21,7 @@
 <main class="container">
 
     <h1>Create an Item</h1>
-    
+
     <form method="POST" action="items/create">
 
         <label for="name">Name</label>
