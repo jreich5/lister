@@ -1,5 +1,7 @@
 package com.codeup.lister.controllers;
 
+import com.codeup.lister.dao.DaoFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +13,9 @@ import java.io.IOException;
 public class ItemDeleteServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // logic to delete the item from the DB
-        request.getRequestDispatcher("/WEB-INF/item/index.jsp").forward(request, response);
+        long id = (long) Integer.parseInt(request.getParameter("id"));
+        boolean itemDeleted = DaoFactory.getItemsDao().deleteItem(id);
+        response.sendRedirect("/items");
     }
 
 }

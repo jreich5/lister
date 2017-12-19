@@ -45,8 +45,17 @@ public class ItemDao implements Items {
     }
 
     @Override
-    public long deleteItem(long id) {
-        return 0;
+    public boolean deleteItem(long id) {
+        String deleteQuery = "DELETE FROM items WHERE id = ?";
+        boolean itemDeleted = false;
+        try {
+            PreparedStatement ps = connection.prepareStatement(deleteQuery);
+            ps.setLong(1, id);
+            itemDeleted = ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return itemDeleted;
     }
 
     @Override

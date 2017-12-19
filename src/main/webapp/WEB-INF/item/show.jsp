@@ -22,7 +22,10 @@
     <h3>id #${item.id}</h3>
     <h3>Item name: ${item.name}</h3>
     <a href="/items/edit?id=${item.id}" class="btn btn-warning">Edit</a>
-    <a href="/items/delete?id=${item.id}" class="btn btn-danger">Delete</a>
+    <form method="POST" action="/items/delete">
+        <input type="hidden" value="${item.id}" name="id">
+        <button class="btn btn-danger">Delete</button>
+    </form>
 
 </main>
 
