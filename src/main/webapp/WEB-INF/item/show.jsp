@@ -19,8 +19,10 @@
 <main class="container">
 
     <h1>List Item</h1>
-
-    <h3>${item}</h3>
+    <h3>id #${item.id}</h3>
+    <h3>Item name: ${item.name}</h3>
+    <a href="/items/edit?id=${item.id}" class="btn btn-warning">Edit</a>
+    <a href="/items/delete?id=${item.id}" class="btn btn-danger">Delete</a>
 
 </main>
 
