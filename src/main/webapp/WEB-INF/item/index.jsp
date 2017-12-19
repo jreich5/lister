@@ -24,7 +24,7 @@
 
         <ul>
             <c:forEach var="item" items="${items}">
-                <li><a href="/items/show?id=${item.id}">${item.name}</a></li>
+                <li><a href="/items/show?id=<c:out value="${item.id}"/>"><c:out value="${item.name}" /></a></li>
             </c:forEach>
         </ul>
 

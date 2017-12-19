@@ -21,11 +21,11 @@
     <main class="container">
 
         <h1>List Item</h1>
-        <h3>id #${item.id}</h3>
-        <h3>Item name: ${item.name}</h3>
-        <a href="/items/edit?id=${item.id}" class="btn btn-warning">Edit</a>
+        <h3>id #<c:out value="${item.id}"/></h3>
+        <h3>Item name: <c:out value="${item.name}"/></h3>
+        <a href="/items/edit?id=<c:out value="${item.id}"/>" class="btn btn-warning">Edit</a>
         <form method="POST" action="/items/delete">
-            <input type="hidden" value="${item.id}" name="id">
+            <input type="hidden" value="<c:out value="${item.id}"/>" name="id">
             <button class="btn btn-danger">Delete</button>
         </form>
 
