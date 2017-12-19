@@ -22,7 +22,7 @@
 
     <ul>
         <c:forEach var="item" items="${items}">
-            <li>${item.name}</li>
+            <li><a href="/items/show?id=${item.id}">${item.name}</a></li>
         </c:forEach>
     </ul>
 

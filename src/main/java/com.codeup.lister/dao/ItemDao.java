@@ -50,8 +50,18 @@ public class ItemDao implements Items {
     }
 
     @Override
-    public long updateItem(long id) {
-        return 0;
+    public long updateItem(Item item) {
+        String updateQuery = "UPDATE items SET name = ? WHERE id = ?";
+        long numberOfRowsAffected = 0;
+        try {
+            PreparedStatement ps = connection.prepareStatement(updateQuery);
+            ps.setString(1, item.getName());
+            ps.setLong(2, item.getId());
+            numberOfRowsAffected = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return numberOfRowsAffected;
     }
 
     @Override
@@ -60,7 +70,19 @@ public class ItemDao implements Items {
     }
 
     @Override
-    public Item findItem(long id) {
-        return null;
+    public Item findItemById(long id) {
+        String selectQuery = "SELECT * FROM items WHERE id = ?";
+        Item result = null;
+        try {
+            PreparedStatement ps = connection.prepareStatement(selectQuery);
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                result = new Item(id, rs.getString("name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }

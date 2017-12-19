@@ -21,10 +21,10 @@
 
     <h1>Edit Item</h1>
 
-    <form method="POST" action="items/edit">
-        <input type="hidden" value="ITEM ID GOES HERE" name="id">
+    <form method="POST" action="/items/edit">
+        <input type="hidden" value="${item.id}" name="id">
         <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Type item name">
+        <input id="name" name="name" type="text" placeholder="Type item name" value="${item.name}">
         <button>Submit</button>
     </form>
 
