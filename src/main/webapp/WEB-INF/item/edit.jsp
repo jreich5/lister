@@ -17,20 +17,22 @@
 </head>
 <body>
 
-<main class="container">
+    <%@ include file="/WEB-INF/partials/navbar.html" %>
 
-    <h1>Edit Item</h1>
+    <main class="container">
 
-    <form method="POST" action="/items/edit">
-        <input type="hidden" value="${item.id}" name="id">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Type item name" value="${item.name}">
-        <button>Submit</button>
-    </form>
+        <h1>Edit Item</h1>
 
-</main>
+        <form method="POST" action="/items/edit">
+            <input type="hidden" value="${item.id}" name="id">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Type item name" value="${item.name}">
+            <button>Submit</button>
+        </form>
 
-<%@ include file="/WEB-INF/partials/scripts.html" %>
+    </main>
+
+    <%@ include file="/WEB-INF/partials/scripts.html" %>
 
 </body>
 </html>

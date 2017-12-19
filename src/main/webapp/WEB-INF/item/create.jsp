@@ -18,21 +18,22 @@
 </head>
 <body>
 
-<main class="container">
+    <%@ include file="/WEB-INF/partials/navbar.html" %>
+    <main class="container">
 
-    <h1>Create an Item</h1>
+        <h1>Create an Item</h1>
 
-    <form method="POST" action="/items/create">
+        <form method="POST" action="/items/create">
 
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Type item name">
-        <button>Submit</button>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Type item name">
+            <button>Submit</button>
 
-    </form>
+        </form>
 
-</main>
+    </main>
 
-<%@ include file="/WEB-INF/partials/scripts.html" %>
+    <%@ include file="/WEB-INF/partials/scripts.html" %>
 
 </body>
 </html>

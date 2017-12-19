@@ -16,19 +16,21 @@
 </head>
 <body>
 
-<main class="container">
+    <%@ include file="/WEB-INF/partials/navbar.html" %>
 
-    <h1>Item List</h1>
+    <main class="container">
 
-    <ul>
-        <c:forEach var="item" items="${items}">
-            <li><a href="/items/show?id=${item.id}">${item.name}</a></li>
-        </c:forEach>
-    </ul>
+        <h1>Item List</h1>
 
-</main>
+        <ul>
+            <c:forEach var="item" items="${items}">
+                <li><a href="/items/show?id=${item.id}">${item.name}</a></li>
+            </c:forEach>
+        </ul>
 
-<%@ include file="/WEB-INF/partials/scripts.html" %>
+    </main>
+
+    <%@ include file="/WEB-INF/partials/scripts.html" %>
 
 </body>
 </html>
