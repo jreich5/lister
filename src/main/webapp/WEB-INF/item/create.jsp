@@ -22,7 +22,7 @@
 
     <h1>Create an Item</h1>
 
-    <form method="POST" action="items/create">
+    <form method="POST" action="/items/create">
 
         <label for="name">Name</label>
         <input id="name" name="name" type="text" placeholder="Type item name">

@@ -75,7 +75,20 @@ public class ItemDao implements Items {
 
     @Override
     public long createItem(Item item) {
-        return 0;
+        String insertQuery = "INSERT INTO items (name) VALUES (?)";
+        long lastInsertId = 0;
+        try {
+            PreparedStatement ps = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, item.getName());
+            ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                lastInsertId = rs.getLong(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return lastInsertId;
     }
 
     @Override

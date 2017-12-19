@@ -24,6 +24,11 @@ public class Item implements Serializable {
     private String name;
 
     public Item() {};
+
+    public Item(String name) {
+        this.name = name;
+    }
+
     public Item(long id, String name) {
         this.id = id;
         this.name = name;

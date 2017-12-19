@@ -1,5 +1,8 @@
 package com.codeup.lister.controllers;
 
+import com.codeup.lister.dao.DaoFactory;
+import com.codeup.lister.dao.models.Item;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +16,13 @@ public class ItemCreateServlet extends HttpServlet {
         // validate inputs
         // if valid, create the new item object and add to DB and redirect to index page
         // if invalid redirect back to the create form
+
+        String name = request.getParameter("name");
+        Item item = new Item(name);
+
+        long lastInsertId = DaoFactory.getItemsDao().createItem(item);
+
+        response.sendRedirect("/items");
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/item/create.jsp").forward(request, response);
